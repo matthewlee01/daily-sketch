@@ -30,6 +30,7 @@ function setup() {
 }
 
 function draw() {
+  background(10, 10);
   let t = floor(millis() / 42);
   out.loadPixels();
   src.loadPixels();
@@ -40,7 +41,7 @@ function draw() {
       let yy = y;
         xx = abs(x-t);
         yy = y + t;
-      let threshold = (255 * (1 - (BAYER_MAP_1[x % 4][y % 4]) / 18));
+      let threshold = (255 * (1 - (BAYER_MAP_1[x % 4][y % 4]) / 17)) + 10*sin(16*cos(millis()/800));
       if (src.pixels[i] > threshold*3/2) {
         out.pixels[i] = rs[0];
         out.pixels[i + 1] = gs[0];
