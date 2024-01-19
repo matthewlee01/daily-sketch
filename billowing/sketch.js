@@ -2,7 +2,7 @@ let s, img;
 
 function preload() {
   s = loadShader('shader.vert', 'shader.frag');
-  img = loadImage('perlin1024.png');
+  img = loadImage('perlin1000.png');
 }
 
 function setup() {
