@@ -1,4 +1,4 @@
-const SIZE = 512;
+const SIZE = 1024;
 
 let xs = [];
 let ys = [];
@@ -14,7 +14,7 @@ let step = 1;
 function setup() {
   createCanvas(SIZE, SIZE);
   noFill();
-  for (let i = 0; i < 24; i++) {
+  for (let i = 0; i < 32; i++) {
     xs.push(random(SIZE));
     ys.push(random(SIZE));
   }

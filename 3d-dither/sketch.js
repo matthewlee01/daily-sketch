@@ -1,4 +1,4 @@
-const SIZE = 512;
+const SIZE = 1024;
 
 let g1, g2, g3, g4, dither, blurH, blurV, noise;
 let t = 0;
@@ -28,13 +28,15 @@ function draw() {
   t++;
   g1.push();
   g1.fill(250);
-  g1.background(0);
+  g1.background(10, 20);
+
   g1.pointLight(200, 200, 200, 0, 0, 180);
+
   // g1.ambientLight(1);
 
   g1.push();
-  g1.translate(sin(1.6*cos(millis()/2222))*SIZE/3, sin(1.9*cos(millis()/1234))*SIZE/3)
-  g1.sphere(69);
+  g1.translate(sin(1.6*cos(millis()/444))*SIZE/3, sin(1.9*cos(millis()/1234))*SIZE/3)
+  g1.sphere(128);
   g1.pop();
 
   g1.pop();
