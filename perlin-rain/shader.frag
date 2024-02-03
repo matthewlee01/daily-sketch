@@ -17,7 +17,7 @@ void main() {
     gl_FragColor = vec4(
         0.0,
         0.0,
-        98.0/255.0 * smoothstep(0.6, 0.8, noise),
+        98.0/255.0 * noise,
         1.0
     );
 }

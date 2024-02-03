@@ -2,7 +2,7 @@ let s, img;
 
 function preload() {
   s = loadShader('shader.vert', 'shader.frag');
-  img = loadImage('perlin1024.png');
+  img = loadImage('perlin512.png');
 }
 
 function setup() {
@@ -12,7 +12,7 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(255, 10);
   s.setUniform('u_resolution', [width, height]);
   s.setUniform('u_mouse', [mouseX, mouseY]);
   s.setUniform('u_time', millis()/1000.0);
