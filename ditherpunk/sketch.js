@@ -17,7 +17,7 @@ let gs = [211, 133, 26];
 let bs = [152, 33, 26];
 
 function preload() {
-  src = loadImage("image.jpg");
+  src = loadImage("collage.gif");
 }
 
 function setup() {

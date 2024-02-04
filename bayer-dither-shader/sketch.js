@@ -3,7 +3,7 @@ let s, img, noise;
 function preload() {
   s = loadShader('shader.vert', 'shader.frag');
   noise = loadImage('perlin1024.png');
-  img = loadImage('image.jpg');
+  img = loadImage('collage.gif');
 }
 
 function setup() {

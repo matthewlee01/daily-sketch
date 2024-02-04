@@ -25,9 +25,9 @@ void main() {
     int x = int(mod(gl_FragCoord.x, 4.0));
     float threshold = bayer[1][1]/16.0;
     gl_FragColor = vec4(
-        step(0.5, color.r),
-        step(0.5, color.g),
-        step(0.5, color.b),
+        step(0.6, color.r),
+        step(0.4, color.g),
+        step(0.2, color.b),
         1.0
     );
 }
