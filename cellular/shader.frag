@@ -36,5 +36,5 @@ void main() {
     }
 
     float noise = texture2D(u_tex, uv).r;
-    gl_FragColor = vec4(d, d/4.+uv.x/2.+0.1, d/4.+uv.y/2.+0.1, 1.0);
+    gl_FragColor = vec4(1. - d/4., 1. - d*2., 0.4, 1.0);
 }

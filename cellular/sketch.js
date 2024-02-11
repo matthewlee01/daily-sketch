@@ -4,6 +4,9 @@ let xs = [];
 let ys = [];
 let dxs = [];
 let dys = [];
+let ndxs = [];
+let ndys = [];
+let t = 0;
 
 function preload() {
   s = loadShader('shader.vert', 'shader.frag');
@@ -18,6 +21,8 @@ function setup() {
     ys.push(random());
     dxs.push(random(-0.01, 0.01));
     dys.push(random(-0.01, 0.01));
+    ndxs.push(random(-0.01, 0.01));
+    ndys.push(random(-0.01, 0.01));
   }
 }
 
@@ -44,14 +49,30 @@ function draw() {
 }
 
 function updatePoints() {
+  t += 0.01;
+  if (t > 1) {
+    t = 0;
+    for (let i = 0; i < 8; i++) {
+      dxs[i] = ndxs[i];
+      dys[i] = ndys[i];
+      ndxs[i] = random(-0.01, 0.01);
+      ndys[i] = random(-0.01, 0.01);
+    }
+  }
   for (let i = 0; i < 8; i++) {
-    xs[i] += dxs[i];
-    ys[i] += dys[i];
+    let dx = lerp(dxs[i], ndxs[i], t);
+    let dy = lerp(dys[i], ndys[i], t);
+    // movement and collision
+    xs[i] += dx;
+    ys[i] += dy;
     if (xs[i] < 0 || xs[i] > 1) {
       dxs[i] *= -1;
+      ndxs[i] *= -1;
     }
     if (ys[i] < 0 || ys[i] > 1) {
       dys[i] *= -1;
+      ndys[i] *= -1;
     }
+
   }
 }
