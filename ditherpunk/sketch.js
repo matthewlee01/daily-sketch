@@ -6,18 +6,18 @@ let BAYER_MAP_0 = [
 ];
 
 let BAYER_MAP_1 = [
-  [0, 8, 2, 10],
-  [12, 4, 14, 6],
-  [3, 11, 1, 9],
+  [5, 8, 6, 10],
+  [12, 6, 14, 8],
+  [5, 11, 6, 9],
   [15, 7, 13, 5],
 ];
 
-let rs = [242, 215, 26];
-let gs = [211, 133, 26];
-let bs = [152, 33, 26];
+let rs = [255, 215, 0];
+let gs = [255, 133, 42];
+let bs = [255, 33, 0];
 
 function preload() {
-  src = loadImage("collage.gif");
+  src = loadImage("image.jpg");
 }
 
 function setup() {
@@ -41,8 +41,8 @@ function draw() {
       let yy = y;
         xx = abs(x-t);
         yy = y + t;
-      let threshold = (255 * (1 - (BAYER_MAP_1[x % 4][y % 4]) / 20)) + 4*sin(16*cos(millis()/666));
-      if (src.pixels[i] > threshold*3/2) {
+      let threshold = (255 * (1 - (BAYER_MAP_1[x % 4][y % 4]) / 22)) + 2*sin(millis()/666);
+      if (src.pixels[i] > threshold*6/5) {
         out.pixels[i] = rs[0];
         out.pixels[i + 1] = gs[0];
         out.pixels[i + 2] = bs[0];
