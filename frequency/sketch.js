@@ -5,7 +5,7 @@ let t = 0;
 
 function preload() {
   s = loadShader("shader.vert", "shader.frag");
-  img = loadImage("image.png");
+  img = loadImage("image.jpg");
 }
 
 function setup() {

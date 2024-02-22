@@ -1,4 +1,4 @@
-const SIZE = 512;
+const SIZE = 1024;
 
 let g, s, noise, font1;
 let t = 0;
@@ -11,7 +11,7 @@ function preload() {
 
 function setup() {
   createCanvas(SIZE, SIZE, WEBGL);
-  // noStroke();
+  noStroke();
   g = createGraphics(SIZE, SIZE, WEBGL);
 
 }
