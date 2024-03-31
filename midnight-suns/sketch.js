@@ -25,75 +25,75 @@ function setup() {
 }
 
 function draw() {
-  t += 0.05;
+  t++;
   g1.push();
   g1.fill(46);
-  g1.background(255, 20);
+  g1.background(100, 20);
 
-  g1.ambientLight(288, 288, 288);
-  g1.pointLight(sin(t)*250, 250, cos(t)*250, 0, 0, 0);
+  g1.ambientLight(88, 88, 88);
+  g1.pointLight(200, 200, 200, 0, 0, 0);
 
   g1.rotateX(millis()/97);
   g1.rotateY(millis()/111);
   g1.rotateZ(millis()/57);
 
   g1.push();
-  g1.translate(sin(t)*width/6.3, cos(t)*height/12.3, sin(t)*width/4.2);
+  g1.translate(width/6.3, height/12.3, width/4.2);
   g1.sphere(23);
   g1.pop();
 
   g1.push();
-  g1.translate(sin(t)*width/4.2, cos(t)*height/6.9, -sin(t)*width/5.5);
+  g1.translate(width/4.2, height/6.9, -width/5.5);
   g1.sphere(28);
   g1.pop();
 
   g1.push();
-  g1.translate(sin(t)*width/3.2, -cos(t)*height/4.9, sin(t)*width/7.2);
+  g1.translate(width/3.2, -height/4.9, width/7.2);
   g1.sphere(14);
   g1.pop();
 
   g1.push();
-  g1.translate(sin(t)*width/8.8, -cos(t)*height/7.7, -sin(t)*width/6.6);
+  g1.translate(width/8.8, -height/7.7, -width/6.6);
   g1.sphere(16);
   g1.pop();
 
   g1.push();
-  g1.translate(-sin(t)*width/3.6, cos(t)*height/4.8, sin(t)*width/7.8);
+  g1.translate(-width/3.6, height/4.8, width/7.8);
   g1.sphere(42);
   g1.pop();
 
   g1.push();
-  g1.translate(-sin(t)*width/3.3, cos(t)*height/3.6, -sin(t)*width/9.9);
+  g1.translate(-width/3.3, height/3.6, -width/9.9);
   g1.sphere(18);
   g1.pop();
 
   g1.push();
-  g1.translate(-sin(t)*width/16, -cos(t)*height/32, sin(t)*width/8);
+  g1.translate(-width/16, -height/32, width/8);
   g1.sphere(36);
   g1.pop();
 
   g1.push();
-  g1.translate(-sin(t)*width/8.8, -cos(t)*height/4, -sin(t)*width/4);
+  g1.translate(-width/8.8, -height/4, -width/4);
   g1.sphere(12);
   g1.pop();
 
   g1.push();
-  g1.translate(0, -cos(t)*cos(t)*height/4, -sin(t)*width/4);
+  g1.translate(0, -height/4, -width/4);
   g1.sphere(28);
   g1.pop();
 
   g1.push();
-  g1.translate(-sin(t)*width/8.8, 0, -sin(t)*width/16);
+  g1.translate(-width/8.8, 0, -width/16);
   g1.sphere(22);
   g1.pop();
 
   g1.push();
-  g1.translate(-sin(t)*width/8.8, -cos(t)*height/4, 0);
+  g1.translate(-width/8.8, -height/4, 0);
   g1.sphere(18);
   g1.pop();
 
   g1.push();
-  g1.translate(0, -cos(t)*height/8, 0);
+  g1.translate(0, -height/8, 0);
   g1.sphere(46);
   g1.pop();
 
@@ -122,7 +122,7 @@ function draw() {
   dither.setUniform("u_tex", g1);
   dither.setUniform("u_noise", noise);
 
-  g4.background(255, 0, 0);
+  g4.background(0);
   g4.rect(0, 0, SIZE, SIZE);
   image(g4, 0, 0, SIZE, SIZE);
   // image(g1, 0, 0, SIZE, SIZE);

@@ -16,11 +16,11 @@ void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     float d = distance(st, vec2(0.5, 0.5));
     float color = texture2D(u_tex, uv).r;
-    float noise = 1.1 * texture2D(u_noise, uv).r;
+    float noise = 0.8 - texture2D(u_noise, uv).r;
     gl_FragColor = vec4(
+        step(0.66 * noise, color),
+        step(0.5 * noise, color),
         step(0.33 * noise, color),
-        step(0.5 * noise, color),
-        step(0.5 * noise, color),
-        0.5
+        1.0
     );
 }

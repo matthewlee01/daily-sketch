@@ -6,15 +6,15 @@ let BAYER_MAP_0 = [
 ];
 
 let BAYER_MAP_1 = [
-  [5, 8, 6, 10],
-  [12, 6, 14, 8],
-  [5, 11, 6, 9],
+  [2, 8, 2, 10],
+  [12, 4, 14, 6],
+  [3, 11, 1, 9],
   [15, 7, 13, 5],
 ];
 
-let rs = [255, 215, 0];
-let gs = [255, 133, 42];
-let bs = [255, 33, 0];
+let rs = [255, 137, 83, 191];
+let gs = [242, 177, 145, 78];
+let bs = [215, 189, 126, 34];
 
 function preload() {
   src = loadImage("image.jpg");
@@ -41,8 +41,8 @@ function draw() {
       let yy = y;
         xx = abs(x-t);
         yy = y + t;
-      let threshold = (255 * (1 - (BAYER_MAP_1[x % 4][y % 4]) / 22)) + 2*sin(millis()/666);
-      if (src.pixels[i] > threshold*6/5) {
+      let threshold = (255 * (1 - (BAYER_MAP_1[x % 4][y % 4]) / 10)) + 8*sin(millis()/444);
+      if (src.pixels[i] > threshold*3/2) {
         out.pixels[i] = rs[0];
         out.pixels[i + 1] = gs[0];
         out.pixels[i + 2] = bs[0];
@@ -52,10 +52,15 @@ function draw() {
         out.pixels[i + 1] = gs[1];
         out.pixels[i + 2] = bs[1];
         out.pixels[i + 3] = 255; 
-      } else {
+      } else if (src.pixels[i] > threshold * 1/2) {
         out.pixels[i] = rs[2];
         out.pixels[i + 1] = gs[2];
         out.pixels[i + 2] = bs[2];
+        out.pixels[i + 3] = 255; 
+      }else {
+        out.pixels[i] = rs[3];
+        out.pixels[i + 1] = gs[3];
+        out.pixels[i + 2] = bs[3];
         out.pixels[i + 3] = 255;
       }
     }
