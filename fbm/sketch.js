@@ -5,7 +5,7 @@ let t = 0;
 
 function preload() {
   s = loadShader("shader.vert", "shader.frag");
-  noise = loadImage("perlin1000.png");
+  noise = loadImage("perlin1024.png");
   font1 = loadFont("valverde.otf");
 }
 
@@ -27,7 +27,7 @@ function draw() {
   g.text("computer", -64, 28);
   background(25);
   shader(s);
-  s.setUniform("u_time", millis() / 1000.0 - 8.0);
+  s.setUniform("u_time", millis() / 1000.0);
   s.setUniform("u_noise", noise);
   s.setUniform("u_tex", g)
   rect(0, 0, SIZE, SIZE);
